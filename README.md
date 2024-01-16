@@ -15,7 +15,7 @@ Item.hpp, Item.cpp are created by CSCI 235 UTA: Georgina Woo. The files are prov
 
 Makefile and gitignore.txt are provided by the CSCI 235 course of Hunter College. Makefile is modified to include Character.o , Barbarian.o , Mage.o , Scoundrel.o by Fardeen Bhuiyan
 
-Item.o main.o is removed. main.cpp is modified by Fardeen Bhuiyan.
+Item.o main.o is removed. main and main.cpp is modified by Fardeen Bhuiyan.
 
 This current README.md is modified by Fardeen Bhuiyan.
 
