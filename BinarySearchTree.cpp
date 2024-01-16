@@ -1,6 +1,5 @@
 //  Created by Frank M. Carrano and Timothy M. Henry.
 //  Copyright (c) 2017 Pearson Education, Hoboken, New Jersey.
-// File has been provided by Hunter College. Unchanged.
 
 #include <iostream>
 

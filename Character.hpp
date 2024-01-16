@@ -26,15 +26,7 @@ private:                        //private variables cannot be altered unless thr
     int armor_;
     int level_;
     bool enemy_;
-/*
-private:
-- The name of the character (a string in UPPERCASE)
-- The race of the character (an enum)
-- The character's vitality (a non-negative integer)
-- The character's max armor level (a non-negative integer)
-- The character's level (a non-negative integer)
-- A flag indicating whether the character is an enemy
-*/
+
 
 public:
     Character();            //create default constructor

@@ -21,14 +21,7 @@ Character::Character()    //default constructor.
     armor_ = 0;
     level_ = 0;
     enemy_ = false;
-    /*
-      Default constructor.
-      Default-initializes all private members. 
-      Default character name: "NAMELESS". 
-      Booleans are default-initialized to False. 
-      Default enum value: NONE. 
-      Default Vitality, Max Armor, and Level: 0.
-   */
+
 }
 
 Character::Character(string a_name, string A_RACE, int A_VITALITY , int A_ARMOR, int A_LEVEL, bool a_isEnemy){
@@ -70,21 +63,7 @@ Character::Character(string a_name, string A_RACE, int A_VITALITY , int A_ARMOR,
     
     enemy_ = a_isEnemy;
 
-  /*
-  Parameterized constructor.
-  @param      : The name of the character (a string in UPPERCASE)
-  @param      : The race of the character (a string)
-  @param      : The character's vitality (a non-negative integer) , with default  
-                value 0
-  @param      : The character's max armor level (a non-negative integer), with 
-                default value 0
-  @param      : The character's level (non-negative integer), with default value 0
-  @param      : A flag indicating whether the character is an enemy, with default 
-                value false
-  @post       : The private members are set to the values of the corresponding 
-                parameters.
-  */
-
+ 
 }                           
 
 
@@ -128,9 +107,7 @@ string Character::getName() const
 {
     return name_;            //return private member variable
 
-    /*
-      @return : the name of the Character
-    */
+
 }
 
 void Character::setRace(const string &A_RACE)   
@@ -165,11 +142,7 @@ void Character::setRace(const string &A_RACE)
         race_  = NONE;              //The first if (A_RACE == "NONE") is not needed if we have this else statement, but not too big of an issue.
     }
 
-    /*
-       @param  : the race of the Character (a string)
-       @post   : sets the Character's race to the value of the parameter.
-                 If the given race was invalid, set race_ to NONE.
-    */
+
 }
 
 string Character::getRace() const
@@ -204,9 +177,7 @@ string Character::getRace() const
        return "NONE";
    }
 
-   /*
-      @return : the race of the Character (a string)
-   */
+
 }
 
 void Character::setVitality(const int &A_VITALITY)
@@ -217,22 +188,14 @@ void Character::setVitality(const int &A_VITALITY)
         vitality_ = A_VITALITY;
     }
  
-    /*
-    @param  : an integer vitality
-    @pre    : vitality >= 0 : Characters cannot have negative health
-    @post   : sets the vitality private member to the value of the parameter
-              if vitality is negative, do nothing.
-    */  
-    
+
 }
 
 int Character::getVitality() const
 {
     return vitality_;
 
-    /*
-      @return : the value stored in vitality_
-    */
+
 }
 
 void Character::setArmor(const int &A_ARMOR)
@@ -243,21 +206,14 @@ void Character::setArmor(const int &A_ARMOR)
         armor_ = A_ARMOR;       //fine  .if negative, don't change. reason being, the default parameter in the paramet constructor should set it to 0 first. But if you call the setter and the number is negative, you don't want the level to turn to 0. You want that negative numebr call to be ignored
     }
   
-  /*
-    @param  : an integer armor level
-    @pre    : armor >= 0 : Characters cannot have negative armor
-    @post   : sets the armor private member to the value of the parameter
-              if armor is negative, do nothing.
-  */
+
 
 }
 
 int Character::getArmor() const
 {
     return armor_;
-    /*
-      @return : the value stored in armor_
-    */
+
 }
 
 
@@ -269,12 +225,7 @@ void Character::setLevel(const int &A_LEVEL)
         level_ = A_LEVEL;
     }
    
-    /*
-    @param  : an integer level
-    @pre    : level >= 0 : Characters cannot have a negative
-    @post   : sets the level private member to the value of the parameter
-              if level is negative, do nothing.
-    */
+
 
 }
 
@@ -282,9 +233,7 @@ int Character::getLevel() const
 {
     return level_;
 
-    /*
-      @return : the value stored in level_
-    */
+
 }
 
 
@@ -292,9 +241,7 @@ void Character::setEnemy()        //The specific setter can be called later if n
 {  
                         
    enemy_ = true;       //default parameter in constructor already sets it to false. Any setter call should set it to true because instructions say so.
-  /*
-   @post   : sets the enemy flag to true
-  */
+
 }   
 
 bool Character::isEnemy() const
@@ -302,7 +249,6 @@ bool Character::isEnemy() const
    return enemy_;           //if you return enemy_, if enemy_ is true, it will return true. return false if false.
                             //this getter is  like every other getter before. return private variable.
     /*
-    @return true if the character is an enemy, false otherwise
 
     Note: this is an accessor function and must follow the same convention as all accessor  
           functions even if it is not called getEnemy
