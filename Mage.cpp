@@ -15,7 +15,6 @@ Date of Submission: September 22, 2023
 
 #include "Character.hpp"
 
-//The red squiggly underlines are because I haven't used inheritance yet.
 
 /*- A string that represents their school of magic
 - A string that represents their weapon
@@ -34,7 +33,7 @@ Mage::Mage()
     weapon_ = "NONE";
     summon_incarnate_ = false;
     setName ("NAMELESS");
-    isEnemy();              //i think this just returns whatever enemy_  is , and since by default in the defautl Character constructor, enemy_ is already false
+    isEnemy();              
 
     
 
@@ -73,14 +72,9 @@ Mage::Mage(const string& name, const string& race, int vitality, int armor, int 
     setVitality (vitality);
     setArmor(armor);
     setLevel(level);
-    isEnemy();              //i think this just returns whatever enemy_  is , and since by default in the defautl parameter constructor,  enemy_ is already false     
+    isEnemy();                  
 
-    /*
-    (vitality >= 0) ? vitality_ = vitality: vitality_ = 0;          //if greater than or equal to 0, private member vitality_ = parameter vitality. if less than 0, private member vitality_ = 0.
-    (armor >= 0) ? armor_ = armor: armor_ = 0;
-    (level >= 0) ? level_ = level: level_ = 0;
-    enemy_ = enemy; 
-    */
+
 
     if (setSchool(magic_school) == false)  //checks the boolean setSchool function if school name is false
     {
@@ -150,7 +144,7 @@ bool Mage::setSchool(const string& magic_school)
 
     else if (newTitle.empty())         //if there are no letters at all            //you could also, loop through title.length again and find if there is no isalpha letters at all, but that takes longer.
     {
-        return false;      //redundant tbh
+        return false;      //redundant to be honest
     }
 
     else
@@ -242,5 +236,3 @@ bool Mage::hasIncarnateSummon() const
     return summon_incarnate_;       //returns whatever the private member is (true or false)
 }
 
-
-//ITS NOW A 0/80 because you added & to bool incarnate for setIncarnateSummon in hpp and cpp for mage class.

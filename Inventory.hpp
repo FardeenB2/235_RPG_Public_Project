@@ -1,5 +1,5 @@
 //PROJECT 7 (Final Project on Binary Search Tree)
-//Modified and Completed by Fardeen Bhuiyan
+//Fardeen Bhuiyan
 //December 11, 2023
 //CSCI 235 FALL 2023
 
@@ -44,7 +44,6 @@ public:
 
 
 
-           ///new made on my own. still runs on gradescope.
 
 
 

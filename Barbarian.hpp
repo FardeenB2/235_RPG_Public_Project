@@ -16,7 +16,7 @@ using namespace std;
 #include "Character.hpp"
 
 
-//Note to implement, these are all supposed to be inherited from the superclass. so do that.
+//Note to implement, these are all supposed to be inherited from the superclass.
 
 class Barbarian : public Character
 {

@@ -1,7 +1,7 @@
 /*
 CSCI235 Fall 2023
 Project 7 - Trinkets and Baubles
-Georgina Woo
+CREATED BY CSCI 235 UTA: Georgina Woo. Provided by College, and unchanged by Fardeen Bhuiyan
 Sep 6 2023
 Item.hpp declares the Item class along with its private and public members
 */

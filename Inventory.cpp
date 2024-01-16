@@ -1,3 +1,8 @@
+//PROJECT 7 (Final Project on Binary Search Tree)
+//Fardeen Bhuiyan
+//December 11, 2023
+//CSCI 235 FALL 2023
+
 #include <iostream>
 #include <ctime>
 #include "Inventory.hpp"

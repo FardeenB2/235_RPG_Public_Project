@@ -4,7 +4,7 @@ Author: Fardeen Bhuiyan
 Brief Description: This program creates a Fantasy Character class that contains the data of
 name, race, vitality, armor, and level of the character and whether they are an enemy or not.
 It can initialize these variables and alter them anytime.
-Date of Creation: September 2, 2023
+Date of original Creation: September 2, 2023
 */
 
 

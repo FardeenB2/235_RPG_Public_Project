@@ -16,7 +16,7 @@ using namespace std;
 
 #include "Character.hpp"
 
-//Note to implement, these are all supposed to be inherited from the superclass. so do that.
+//Note to implement, these are all supposed to be inherited from the superclass.
 
 class Mage : public Character
 {
@@ -68,7 +68,7 @@ class Mage : public Character
     /**
   @return  : the string indicating the character's school of magic
 **/    
-        string getSchool() const;                            //not sure if const is necessary since not specified in instructions
+        string getSchool() const;                            
 /**
     @param  : a reference to a string representing the character's weapon
     @post   : sets the private member variable to the value of the parameter.

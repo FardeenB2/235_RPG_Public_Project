@@ -27,25 +27,7 @@ Scoundrel::Scoundrel() : Character()
     disguise_ = false;
 }
 
-/*
-{
-    
-    Character(name), Character
 
-    
-    setName("NAMELESS");
-    isEnemy();
-    
-
-
-    name_ = "NAMELESS";                     //idk if i need to default initialize every other private Character member.
-    enemy_ = false;
-
-    dagger_ = WOOD;
-    faction_ = "NONE";
-
-}
-*/
 
 
 /**
@@ -155,7 +137,7 @@ void Scoundrel::setDagger(const string& dagger)
 
     else if (newTitle.empty())         //if there are no letters at all            //you could also, loop through title.length again and find if there is no isalpha letters at all, but that takes longer.
     {
-        dagger_ = WOOD;        //redundant tbh
+        dagger_ = WOOD;        //redundant to be honest
     }
 
     else
@@ -276,7 +258,7 @@ bool Scoundrel::setFaction (const string& faction)
    
     else if (newTitle.empty())         //if there are no letters at all            //you could also, loop through title.length again and find if there is no isalpha letters at all, but that takes longer.
     {
-        return false;        //redundant tbh
+        return false;        //redundant to be honest
     }
 
     else
