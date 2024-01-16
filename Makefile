@@ -1,8 +1,8 @@
 CXX = g++
-CXXFLAGS = -std=c++17 -g -Wall -O2
+CXXFLAGS = -std=c++17 -g -Wall -O0
 
 PROG ?= main
-OBJS = Character.o main.o
+OBJS = Character.o Barbarian.o Mage.o Scoundrel.o main.o
 
 all: $(PROG)
 
