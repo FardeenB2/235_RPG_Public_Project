@@ -9,74 +9,90 @@
 #include "Inventory.hpp"
 #include <iostream>
 
+using namespace std;
 
-int main()
-{
-    Mage defaultMage;
-    defaultMage.setName("defaultMage");
-    defaultMage.setRace("ELF");
-    defaultMage.setVitality(5);
-    defaultMage.setArmor(3);
-    defaultMage.setLevel(2);
-    defaultMage.setEnemy();
+int main() {
+    // Creating Characters
+    Character c1;
+    Character c2("ROLFE", "HUMAN", 100, 50, 5, false);
+    
+    // Creating Mages
+    Mage m1;
+    Mage m2("ELENA", "ELF", 80, 30, 4, false, "ELEMENTAL", "WAND", true);
 
-    cout << defaultMage.getName() << " is a Level " << defaultMage.getLevel() <<" "<< defaultMage.getRace() << "\nVitality: " 
-    << defaultMage.getVitality() << "\nArmor: " 
-    << defaultMage.getArmor() <<"\nThey are "
-    << defaultMage.isEnemy();
+    // Creating Scoundrels
+    Scoundrel s1;
+    Scoundrel s2("SMITH", "DWARF", 90, 40, 3, true, "STEEL", "CUTPURSE", true);
 
-    cout << "\n";   //-----------------------
-
-    Mage SPYNACH ("SPYNACH", "ELF", 6, 4, 4, false);
-   
-
-    cout << SPYNACH.getName() << " is a Level " << SPYNACH.getLevel() <<" "<< SPYNACH.getRace() << "\nVitality: " 
-    << SPYNACH.getVitality() << "\nArmor: " 
-    << SPYNACH.getArmor() <<"\nThey are "
-    << SPYNACH.isEnemy();
+    // Creating Barbarians
+    Barbarian b1;
+    Barbarian b2("Ssstephen", "LIZARD", 120, 60, 6, true, "AXE", "SHIELD", true);
 
 
-    SPYNACH.setSchool("Illusion");
-    SPYNACH.setCastingWeapon("Wand");
-    SPYNACH.setIncarnateSummon (true);
 
-    cout << "\n" << SPYNACH.getSchool();
-    cout << "\n"  << SPYNACH.getCastingWeapon();
-    cout << "\n"  << SPYNACH.hasIncarnateSummon();
+    // Testing Character class
+    cout << "Testing Character class:" << endl;
+    cout << "Character 1 Name: " << c1.getName() << endl;
+    cout << "Character 2 Name: " << c2.getName() << "| Race: " << c2.getRace() << endl;
 
-    cout << "\n";
-    //------------------------------
+    // Testing Mage class
+    cout << "\nTesting Mage class:" << endl;
+    cout << "Mage 1 School of Magic: " << m1.getSchool() << endl;
+    cout << "Mage 2 Weapon: " << m2.getCastingWeapon() << "| Can Summon Incarnate: " << (m2.hasIncarnateSummon() ? "Yes" : "No") << endl;
+
+    // Testing Scoundrel class
+    cout << "\nTesting Scoundrel class:" << endl;
+    cout << "Scoundrel 1 Faction: " << s1.getFaction() << endl;
+    cout << "Scoundrel 2 Dagger: " << s2.getDagger() << "| Has Disguise: " << (s2.hasDisguise() ? "Yes" : "No") << endl;
+
+    // Testing Barbarian class
+    cout << "\nTesting Barbarian class:" << endl;
+    cout << "Barbarian 1 Main Weapon: " << b1.getMainWeapon() << endl;
+    cout << "Barbarian 2 is Enraged: " << (b2.getEnrage() ? "Yes" : "No") << endl;
+    b2.toggleEnrage();
+    cout << "Barbarian 2 is Enraged (after toggle): " << (b2.getEnrage() ? "Yes" : "No") << endl;
 
 
-    Scoundrel defaultScoundel;
-    defaultScoundel.setName("FLEA");
-    defaultScoundel.setRace("HUMAN");
-    defaultScoundel.setVitality(6);
-    defaultScoundel.setArmor(4);
-    defaultScoundel.setLevel(3);
-    defaultScoundel.setEnemy();
 
-    cout << defaultScoundel.getName() << " is a Level " << defaultScoundel.getLevel() <<" "<< defaultScoundel.getRace() << "\nVitality: " 
-    << defaultScoundel.getVitality() << "\nArmor: " 
-    << defaultScoundel.getArmor() <<"\nThey are "
-    << defaultScoundel.isEnemy();
+    // Creating Inventory and items
+    Inventory inventory;
+    Item potion("Health Potion", CONSUMABLE, 1, 10, 5);
+    Item sword("Sword", WEAPON, 3, 100, 1);
+    Item shield("Shield", ARMOR, 2, 75, 1);
+    Item bread("Bread", CONSUMABLE, 1, 5, 10);
 
-    cout << "\n"; //---------------------------
+    // Adding items to the inventory
+    inventory.addItem(&potion);
+    inventory.addItem(&sword);
+    inventory.addItem(&shield);
+    inventory.addItem(&bread);
 
-    Scoundrel FLEA ("FLEA", "DWARF", 12, 7, 5, false, "rune", "shadowblade", false);
+    // Testing Inventory class
+    cout << "\nTesting Inventory class:" << endl;
+    cout << "Adding items to inventory." << endl;
+    cout << "Total Gold Value in Inventory: " << inventory.getTotalGoldValue() << endl;
 
-    cout << FLEA.getDagger() <<endl;
+    // Printing the inventory in order
+    cout << "Inventory in Order:" << endl;
+    inventory.printInventoryInOrder();
 
-    FLEA.setDagger("Adamant");
-    FLEA.setFaction("Cutpurse");
-    FLEA.setDisguise (true);
+    // Removing an item
+    cout << "\nRemoving one Health Potion from inventory." << endl;
+    inventory.removeItem("Health Potion");
+    cout << "Inventory after removal:" << endl;
+    inventory.printInventoryInOrder();
 
-    cout << "\n" << FLEA.getDagger();
-    cout << "\n" << FLEA.getFaction();
-    cout << "\n" << FLEA.hasDisguise();
+    // Finding an item
+    cout << "\nFinding 'Sword' in inventory:" << endl;
+    Item* foundItem = inventory.findItem("Sword");
+    if (foundItem != nullptr) {
+        cout << "Item found: " << foundItem->getName() << endl;
+    } else {
+        cout << "Item not found." << endl;
+    }
 
-    cout << "\n"; //---------------------------
-
-//new test
-
+    // Printing the inventory based on different attributes
+    cout << "\nPrinting inventory sorted by Level (Descending):" << endl;
+    inventory.printInventory(false, "LEVEL");
+    
 }
