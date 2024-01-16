@@ -3,6 +3,13 @@
 #include "Scoundrel.hpp"
 #include "Barbarian.hpp"
 
+#include "Item.hpp"
+#include "BinaryNode.hpp"
+#include "BinarySearchTree.hpp" 
+#include "Inventory.hpp"
+#include <iostream>
+
+
 int main()
 {
     Mage defaultMage;
